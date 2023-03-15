@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: rgb(168,49,200);
+    background: #1a1a24;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+nav{
+    text-align: center;
+}
+
+.img img{
+    width: 0;
+    position: relative;
+}
+nav h1 {
+    color: aliceblue;
+    font-size: 5rem;
+    text-shadow: 0 4px 3px #0c013a;
+    margin-top: 30px;
+
+}
+.game-container{
+    display: flex;
+    justify-content: center;
+    padding: 60px;
+}
+
+.game-board{
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+}
+.X-O{
+    border: 2px solid white;
+    font-size: 3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.X-O:hover {
+    background: rgb(49,126,200);
+    background-color: #292a2f;
+}
+.infoContainer{
+    text-align: center;
+    color: #ffffff;
+}
+
+.br-0{
+    border-right: 0;
+}
+.bl-0{
+    border-left: 0;
+}
+.bt-0{
+    border-top: 0;
+}
+.bb-0{
+    border-bottom: 0;
+}
+
+button{
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    color: #ffffff;
+    font-weight: 300;
+    font-size: larger;
+    background-color: rgb(0, 132, 88);
+    margin-bottom: 20px;
+}
+
+button:hover {
+    transform: scale(1.05,1.05);
+    background-color: rgb(0, 170, 114);
+}
+
+
+@media screen and (max-width: 561px) {
+
+    .game-board{
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+    }
+
+    nav h1 {
+        font-size: 3rem;    
+    }
+}
