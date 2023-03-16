@@ -6,4 +6,4 @@ This is Training internship repo, I will put all the projects which I am going t
 
 I used HTML, CSS and Javascript to make this project.
 
-link- [https://tik-tac-toi.netlify.app/](https://tik-tac-toi.netlify.app/)
+link- [https://tik-tac-toi.netlify.app/](https://tik-tac-toi.netlify.app/) (ctrl+'click' to open in new tab)
