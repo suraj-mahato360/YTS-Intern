@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&family=Poppins:wght@400;600&display=swap');
+@tailwind base;
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #232323 #3b3b3b;
+  }
+  
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #232323;
+    border-radius: 5px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #3b3b3b;
+    border-radius: 14px;
+    border: 3px solid #232323;
+  }
+@tailwind components;
+@tailwind utilities;
