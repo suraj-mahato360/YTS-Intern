@@ -17,7 +17,7 @@ function App() {
       <Navbar/>
       <Main />
       <About />
-      <Blog className='h-[100vh]'/>
+      <Blog/>
       <Project />
       <Life />
       <Contact />

@@ -32,10 +32,10 @@ const ImgSlider2 = () => {
   return (
     <>
         <div className="slideshow mb-auto max-w-2xl overflow-hidden">
-          <div className="slideshowSlider w-[30rem] h-80 whitespace-nowrap transition-all ease-linear duration-[1s] lg:w-[20rem] lg:h-60" style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}>
+          <div className="slideshowSlider w-[37rem] h-96 whitespace-nowrap transition-all ease-linear duration-[1s] lg:w-[20rem] lg:h-60" style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}>
           
             {slides.map((backImg, index) => (
-              <img className="slide inline-block h-80 w-[30rem] lg:w-[20rem] lg:h-60 " src={ backImg } alt="" key={index} />
+              <img className="slide inline-block w-[37rem] h-96 lg:w-[20rem] lg:h-60 " src={ backImg } alt="" key={index} />
             ))}
           </div>
         </div>

@@ -8,13 +8,13 @@ const Blog = () => {
     <div>
       <section className="rowin h-[100vh] mb-8 lg:h-full" id="blog">
         <div className="blog p-8 pt-32 mt-[105px] lg:pt-1 lg:mt-1 lg:p-2">
-          <div className="main-text text-center">
+          <div className="main-text text-center" data-aos="fade-down">
             <p className="text-[15px] mb-[15px]">Read!</p>
             <h2 className="text-[2.8rem] leading-[1]">
               <span className="text-blue-500">My </span> Blog
             </h2>
           </div>
-          <div className="blog-content grid grid-cols-3 items-center justify-items-center gap-10 mt-20 lg:grid-cols-1">
+          <div className="blog-content grid grid-cols-3 items-center justify-items-center gap-10 mt-20 lg:grid-cols-1" data-aos="fade-up">
             <div className="box max-w-xl bg-gray-900 px-[45px] py-[35px] rounded-[8px] transition-all ease-linear duration-[.45s] hover:drop-shadow-md hover:scale-105">
               <div className="blog-img">
                 <img

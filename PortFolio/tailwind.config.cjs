@@ -26,25 +26,19 @@ module.exports = {
       // => @media (max-width: 639px) { ... }
     },
     extend: {
-      transitionProperty: {
-        'height': 'height',
-        'spacing': 'margin, padding',
+      animation: {
+        fadeIn: "fadeIn 2s ease-in forwards"
       },
       keyframes: {
-       swipe: {
-        '0%': {
-          transform: 'translate(0)'
-        },
-      
-        '100%': {
-          transform: 'translate(-100%)'
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 }
         }
-       }
-      },
-      animation: {
-        'swipe': 'swipe var(--speed) linear infinite backwards',
-      },
+      }
     },
   },
-  plugins: [],
+  variants: {
+    animation: ["motion-safe"]
+},
+  plugins: []
 }

@@ -8,7 +8,7 @@ const main = () => {
       <section className="rowin" id="home">
         <div className="home">
           <div className="content h-[100vh] flex justify-evenly items-center lg:flex-wrap-reverse lg:justify-center lg:text-center">
-            <div className="name text-white">
+            <div className="name text-white" data-aos="fade-right">
               <h1 className="text-7xl mb-2 lg:text-5xl">Suraj Mahato</h1>
               <h2 className="text-4xl mb-1 lg:text-3xl">
                 Software <span className="text-blue-500">Developer.</span>
@@ -20,7 +20,7 @@ const main = () => {
                 </a>
               </div>
             </div>
-            <div className="img">
+            <div className="img" data-aos="fade-left">
               <img className="lg:object-scale-down lg:mt-8" src={mainImg} alt="" />
             </div>
           </div>
