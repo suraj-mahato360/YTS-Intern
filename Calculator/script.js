@@ -11,6 +11,12 @@ Array.from(buttons).forEach((button)=>{
             document.querySelector('input').value = string;
             console.clear();
         }
+        else if(e.target.innerHTML == '<i class="ri-delete-back-2-line"></i>'){
+            let myarray = string.split("")
+            myarray.pop()
+            string = myarray.toString()
+            document.querySelector('input').value = string;
+        }
         else{
             if(e.target.innerHTML == "x"){
                 e.target.innerHTML = "*"
