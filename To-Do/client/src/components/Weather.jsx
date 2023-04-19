@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import "./clock.js";
+
 
 const Weather = () => {
   const [temperature, setTemperature] = useState("");
@@ -10,7 +10,7 @@ const Weather = () => {
   const [humidity, setHumidity] = useState("");
   const [visibility, setVisibility] = useState("");
   const [windspeed, setWineSpeed] = useState("");
-  const [wicon, setWicon] = useState("");
+  // const [wicon, setWicon] = useState("");
   const getWeatherData = () => {
     axios({
       method: "GET",
@@ -23,7 +23,7 @@ const Weather = () => {
         setHumidity(response.data.main.humidity);
         setVisibility(response.data.visibility / 1000);
         setWineSpeed(response.data.wind.speed);
-        setWicon(response.data.weather[0].icon);
+        // setWicon(response.data.weather[0].icon);
         console.log(response);
       })
       .catch((error) => {});

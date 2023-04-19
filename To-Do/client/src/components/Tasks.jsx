@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import { formatDistanceToNowStrict } from "date-fns";
 import { enUS } from "date-fns/locale";
 
 const Tasks = ({ task, onComplete, onDelete }) => {
+    const [backData, setBackData] = useState([{}])
+
+    useEffect(()=>{
+      fetch("/api/tasks").then(
+        response => response.json()
+      ).then(
+        data => {
+          setBackData(data)
+        }
+      )
+    }, [])
+
+    
     const dueDate = task.dueDate
     ? formatDistanceToNowStrict(new Date(task.dueDate), {
         locale: enUS,
@@ -27,7 +40,7 @@ const Tasks = ({ task, onComplete, onDelete }) => {
       <div>
         {dueDate && <span className="text-gray-500 mr-2">Due {dueDate}</span>}
         <button
-          className="py-1 px-2 bg-red-500 text-white font-bold rounded mr-2"
+          className="py-1 px-2 bg-red-500 text-white font-bold rounded"
           onClick={() => onDelete(task.id)}
         >
           Delete

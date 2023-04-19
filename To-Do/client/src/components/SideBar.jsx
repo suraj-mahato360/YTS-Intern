@@ -12,12 +12,12 @@ const SideBar = () => {
         }`}
       >
         <div className="logo text-3xl px-4 py-4">
-          <i class="ri-menu-fill" onClick={() => setOpen(!open)}></i>
+          <i className={`ri-menu-fill`} onClick={() => setOpen(!open)}></i>
         </div>
         <div className="list">
           <ul className={`${open ? "w-72" : "hidden"}`}>
             <NavLink to={"/"} >
-              <li className="side-list flex py-2 cursor-pointer hover:bg-purple-950">
+              <li className="side-list flex py-2 cursor-pointer hover:bg-purple-900">
                 <div className="logo px-4">
                   <i class="ri-sun-fill"></i>
                 </div>
@@ -25,7 +25,7 @@ const SideBar = () => {
               </li>
             </NavLink>
             <NavLink to={"/important"} >
-              <li className="side-list flex py-2 cursor-pointer hover:bg-purple-950">
+              <li className="side-list flex py-2 cursor-pointer hover:bg-purple-900">
                 <div className="logo px-4">
                   <i class="ri-file-warning-fill"></i>
                 </div>
@@ -33,7 +33,7 @@ const SideBar = () => {
               </li>
             </NavLink>
             <NavLink to={"/planned"} >
-              <li className="side-list flex py-2 cursor-pointer hover:bg-purple-950">
+              <li className="side-list flex py-2 cursor-pointer hover:bg-purple-900">
                 <div className="logo px-4">
                   <i class="ri-building-3-fill"></i>
                 </div>
@@ -41,7 +41,7 @@ const SideBar = () => {
               </li>
             </NavLink>
             <NavLink to={"/alltask"} >
-              <li className="side-list flex py-2 cursor-pointer hover:bg-purple-950">
+              <li className="side-list flex py-2 cursor-pointer hover:bg-purple-900">
                 <div className="logo px-4">
                   <i class="ri-file-list-fill"></i>
                 </div>

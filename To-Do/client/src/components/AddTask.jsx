@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Task from "./Tasks";
 
 const AddTask = () => {
+  
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
   const addTask = () => {
     if (newTask === "") return;
     const newTaskObj = {
-      id: Math.random().toString(36).substr(2, 9),
+      id: Math.random().toString(36).substring(2, 9),
       text: newTask,
       completed: false,
     };
