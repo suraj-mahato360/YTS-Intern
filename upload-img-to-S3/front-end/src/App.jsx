@@ -1,7 +1,9 @@
 import './App.css'
 import Navbar from './components/Navbar'
 import UploadImg from './components/uploadImg'
-import DisplayImg from './components/displayImg'
+import 'remixicon/fonts/remixicon.css'
+import Footer from './components/Footer'
+
 
 function App() {
 
@@ -9,7 +11,7 @@ function App() {
     <div className="">
       <Navbar/>
       <UploadImg/>
-      <DisplayImg/>
+      <Footer/>
     </div>
   )
 }
