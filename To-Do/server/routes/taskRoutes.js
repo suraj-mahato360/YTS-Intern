@@ -4,7 +4,6 @@ const { getTasks, getTask, createTask, deleteTask } = require("../controllers/ta
 const validateToken = require("../middleware/validateTokenHandler");
 
 
-
 // router.route("/tag/:id").put(updateTask);
 router.use(validateToken)
 

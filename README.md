@@ -11,3 +11,8 @@ link- [https://tik-tac-toi.netlify.app/](https://tik-tac-toi.netlify.app/)
 #Project 2: Calculator
 
 link- [https://mathcalculatorforyou.netlify.app/](https://mathcalculatorforyou.netlify.app/)
+
+#Project 3: PortFolio website
+Tech-Stack: Vite, React.js, Tailwind CSS
+
+link- [https://mathcalculatorforyou.netlify.app/](https://mahato-suraj.netlify.app/)
