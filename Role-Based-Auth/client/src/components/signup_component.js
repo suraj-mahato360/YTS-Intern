@@ -1,8 +1,7 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 
 export default function SignUp() {
-  const [fname, setFname] = useState("");
-  const [lname, setLname] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("");
@@ -15,7 +14,7 @@ export default function SignUp() {
     } else {
       e.preventDefault();
 
-      console.log(fname, lname, email, password);
+      console.log(username, email, password);
       fetch("http://localhost:5000/register", {
         method: "POST",
         crossDomain: true,
@@ -25,9 +24,8 @@ export default function SignUp() {
           "Access-Control-Allow-Origin": "*",
         },
         body: JSON.stringify({
-          fname,
+          username,
           email,
-          lname,
           password,
           userType,
         }),
@@ -77,22 +75,12 @@ export default function SignUp() {
           ) : null}
 
           <div className="mb-3">
-            <label>First name</label>
+            <label>User name</label>
             <input
               type="text"
               className="form-control"
-              placeholder="First name"
-              onChange={(e) => setFname(e.target.value)}
-            />
-          </div>
-
-          <div className="mb-3">
-            <label>Last name</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Last name"
-              onChange={(e) => setLname(e.target.value)}
+              placeholder="User name"
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
 

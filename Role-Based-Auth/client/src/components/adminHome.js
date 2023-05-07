@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ReactPaginate from 'react-paginate';
 import { useRef } from "react";
 import Sidebar from "./Sidebar";
 import Table from 'react-bootstrap/Table';
@@ -11,8 +10,6 @@ export default function AdminHome({ userData }) {
 
   //setting state
   const [data, setData] = useState([]);
-  const [limit,setLimit]=useState(5);
-  const [pageCount,setPageCount]=useState(1);
   const currentPage=useRef();
 
 
@@ -34,14 +31,6 @@ export default function AdminHome({ userData }) {
         console.log(data, "userData");
         setData(data.data);
       });
-  };
-
-
-
-//logout
-  const logOut = () => {
-    window.localStorage.clear();
-    window.location.href = "./sign-in";
   };
 
 
@@ -69,27 +58,13 @@ export default function AdminHome({ userData }) {
     }
   };
 
-  //pagination
-  function handlePageClick(e) {
-    console.log(e);
-   currentPage.current=e.selected+1;
-    getPaginatedUsers();
-   
-
-  }
-  function changeLimit(){
-    currentPage.current=1;
-    getPaginatedUsers();
-  }
-
   function getPaginatedUsers(){
-    fetch(`http://localhost:5000/paginatedUsers?page=${currentPage.current}&limit=${limit}`, {
+    fetch(`http://localhost:5000/paginatedUsers?page=${currentPage.current}&limit=5`, {
       method: "GET",
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userData");
-        setPageCount(data.pageCount);
         setData(data.result)
         
        
@@ -119,20 +94,20 @@ export default function AdminHome({ userData }) {
          </thead>
          <tbody>
             {data.map((i) => {
-             if(i.userType == "Admin"){
+             if(i.userType === "Admin"){
                 return null;
              }
              else{
              return (
                <tr>
-                  <td>{i.fname}</td>
+                  <td>{i.username}</td>
                  <td>{i.email}</td>
                   <td>{i.userType}</td>
                  <td>
                   <FontAwesomeIcon
                     style={{cursor:"pointer"}}
                     icon={faTrash}
-                    onClick={() => deleteUser(i._id, i.fname)}
+                    onClick={() => deleteUser(i._id, i.username)}
                   />
                 </td>
               </tr>
@@ -140,29 +115,6 @@ export default function AdminHome({ userData }) {
           })}
           </tbody>
         </Table>
-        
-        {/* <ReactPaginate
-          breakLabel="..."
-          nextLabel="next >"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
-          pageCount={pageCount}
-          previousLabel="< previous"
-          renderOnZeroPageCount={null}
-          marginPagesDisplayed={2}
-          containerClassName="pagination justify-content-center"
-          pageClassName="page-item"
-          pageLinkClassName="page-link"
-          previousClassName="page-item"
-          previousLinkClassName="page-link"
-          nextClassName="page-item"
-          nextLinkClassName="page-link"
-          activeClassName="active"
-          forcePage={currentPage.current-1}
-        /> */}
-        {/* <input placeholder="Limit" onChange={e=>setLimit(e.target.value)}/>
-        <button onClick={changeLimit}>Set Limit</button> */}
-
         </div>
       </div>
     </div>

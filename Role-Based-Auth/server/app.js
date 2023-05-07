@@ -11,17 +11,15 @@ app.use(express.json());
 const cors = require("cors");
 app.use(cors());
 const bcrypt = require("bcryptjs");
-app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 
 
 require("./schema/userDetails");
-require("./imageDetails");
 
 const User = mongoose.model("UserInfo");
-const Images = mongoose.model("ImageDetails");
+
 app.post("/register", async (req, res) => {
-  const { fname, lname, email, password, userType } = req.body;
+  const { username, email, password, userType } = req.body;
 
   const encryptedPassword = await bcrypt.hash(password, 10);
   try {
@@ -31,8 +29,7 @@ app.post("/register", async (req, res) => {
       return res.json({ error: "User Exists" });
     }
     await User.create({
-      fname,
-      lname,
+      username,
       email,
       password: encryptedPassword,
       userType,
@@ -52,7 +49,7 @@ app.post("/login-user", async (req, res) => {
   }
   if (await bcrypt.compare(password, user.password)) {
     const token = jwt.sign({ email: user.email }, process.env.JWT_SECRET, {
-      expiresIn: "15m",
+      expiresIn: "20m",
     });
 
     if (res.status(201)) {
@@ -93,91 +90,6 @@ app.listen(5000, () => {
   console.log("Server Started");
 });
 
-app.post("/forgot-password", async (req, res) => {
-  const { email } = req.body;
-  try {
-    const oldUser = await User.findOne({ email });
-    if (!oldUser) {
-      return res.json({ status: "User Not Exists!!" });
-    }
-    const secret = process.env.JWT_SECRET + oldUser.password;
-    const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, {
-      expiresIn: "5m",
-    });
-    const link = `http://localhost:5000/reset-password/${oldUser._id}/${token}`;
-    var transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: "adarsh438tcsckandivali@gmail.com",
-        pass: "rmdklolcsmswvyfw",
-      },
-    });
-
-    var mailOptions = {
-      from: "youremail@gmail.com",
-      to: "thedebugarena@gmail.com",
-      subject: "Password Reset",
-      text: link,
-    };
-
-    transporter.sendMail(mailOptions, function (error, info) {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log("Email sent: " + info.response);
-      }
-    });
-    console.log(link);
-  } catch (error) { }
-});
-
-app.get("/reset-password/:id/:token", async (req, res) => {
-  const { id, token } = req.params;
-  console.log(req.params);
-  const oldUser = await User.findOne({ _id: id });
-  if (!oldUser) {
-    return res.json({ status: "User Not Exists!!" });
-  }
-  const secret = process.env.JWT_SECRET + oldUser.password;
-  try {
-    const verify = jwt.verify(token, secret);
-    res.render("index", { email: verify.email, status: "Not Verified" });
-  } catch (error) {
-    console.log(error);
-    res.send("Not Verified");
-  }
-});
-
-app.post("/reset-password/:id/:token", async (req, res) => {
-  const { id, token } = req.params;
-  const { password } = req.body;
-
-  const oldUser = await User.findOne({ _id: id });
-  if (!oldUser) {
-    return res.json({ status: "User Not Exists!!" });
-  }
-  const secret = process.env.JWT_SECRET + oldUser.password;
-  try {
-    const verify = jwt.verify(token, secret);
-    const encryptedPassword = await bcrypt.hash(password, 10);
-    await User.updateOne(
-      {
-        _id: id,
-      },
-      {
-        $set: {
-          password: encryptedPassword,
-        },
-      }
-    );
-
-    res.render("index", { email: verify.email, status: "verified" });
-  } catch (error) {
-    console.log(error);
-    res.json({ status: "Something Went Wrong" });
-  }
-});
-
 app.get("/getAllUser", async (req, res) => {
   try {
     const allUser = await User.find({});
@@ -199,29 +111,6 @@ app.post("/deleteUser", async (req, res) => {
   }
 });
 
-
-app.post("/upload-image", async (req, res) => {
-  const { base64 } = req.body;
-  try {
-    await Images.create({ image: base64 });
-    res.send({ Status: "ok" })
-
-  } catch (error) {
-    res.send({ Status: "error", data: error });
-
-  }
-})
-
-app.get("/get-image", async (req, res) => {
-  try {
-    await Images.find({}).then(data => {
-      res.send({ status: "ok", data: data })
-    })
-
-  } catch (error) {
-
-  }
-})
 
 app.get("/paginatedUsers", async (req, res) => {
   const allUser = await User.find({});
