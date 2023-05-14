@@ -1,6 +1,6 @@
 import React from 'react'
-import travel1 from '../assets/img/life/Photography/img2.jpg'
 import travel2 from '../assets/img/life/Photography/img3.jpg'
+import travel1 from '../assets/img/life/Photography/img2.jpg'
 import travel3 from '../assets/img/life/Photography/img4.jpg'
 import travel4 from '../assets/img/life/Photography/img5.jpg'
 import travel5 from '../assets/img/life/Photography/img8.jpg'

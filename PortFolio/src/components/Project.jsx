@@ -22,9 +22,9 @@ const Project = () => {
                 src={Proj1Img}
                 alt=""
               />
-              <div className="layer  w-100 h-0 bg-gradient-to-r from-[rgba(0,0,0,0.1)] to-[#066d8a] absolute rounded-[8px] left-0 bottom-0 overflow-hidden flex flex-col items-center justify-center text-center py-[40px] transition-[height] duration-500 group-hover:h-full">
-                <h5 className="text-[25px] font-[600] mb-[15px]">TastyPasty</h5>
-                <p className="text-[1rem] leading-[1.8]">
+              <div className="layer  w-100 h-0 bg-gradient-to-r from-[rgba(0,0,0,0.1)] to-[#066d8a] absolute rounded-[8px] left-0 bottom-0 overflow-hidden flex flex-col items-center justify-center text-center transition-[height] duration-500 group-hover:h-full">
+                <h5 className="text-[25px] font-[600] mb-[15px] lg:text-[20px]">TastyPasty</h5>
+                <p className="text-[1rem] leading-[1.8] lg:text-[12px]">
                   This project is one page application in which you can search
                   dishes according to your input ingredient
                 </p>
@@ -38,11 +38,11 @@ const Project = () => {
             </div>
             <div className="row group relative overflow-hidden rounded-[8px]" >
               <img className="w-full rounded-[8px] block group-hover:scale-[1.1] group-hover:brightness-50" src={Proj2Img} alt="" />
-              <div className="layer  w-100 h-0 bg-gradient-to-r from-[rgba(0,0,0,0.1)] to-[#066d8a] absolute rounded-[8px] left-0 bottom-0 overflow-hidden flex flex-col items-center justify-center text-center py-[40px] transition-[height] duration-500 group-hover:h-full">
-                <h5 className="text-[25px] font-[600] mb-[15px]">
+              <div className="layer  w-100 h-0 bg-gradient-to-r from-[rgba(0,0,0,0.1)] to-[#066d8a] absolute rounded-[8px] left-0 bottom-0 overflow-hidden flex flex-col items-center justify-center text-center transition-[height] duration-500 group-hover:h-full">
+                <h5 className="text-[25px] font-[600] mb-[15px] lg:text-[20px]">
                  PocketFund
                 </h5>
-                <p className="text-[1rem] leading-[1.8]">
+                <p className="text-[1rem] leading-[1.8] lg:text-[12px]">
                 PocketFund is a DAPP, Our platform enables small teams/startups to raise necessary funds via crowdfunding through ledger transactions.
                 </p>
                 <a
@@ -55,11 +55,11 @@ const Project = () => {
             </div>
             <div className="row group relative overflow-hidden rounded-[8px]" >
               <img className="w-full rounded-[8px] block group-hover:scale-[1.1] group-hover:brightness-50" src={Proj3Img} alt="" />
-              <div className="layer  w-100 h-0 bg-gradient-to-r from-[rgba(0,0,0,0.1)] to-[#066d8a] absolute rounded-[8px] left-0 bottom-0 overflow-hidden flex flex-col items-center justify-center text-center py-[40px] transition-[height] duration-500 group-hover:h-full">
-                <h5 className="text-[25px] font-[600] mb-[15px]">
+              <div className="layer  w-100 h-0 bg-gradient-to-r from-[rgba(0,0,0,0.1)] to-[#066d8a] absolute rounded-[8px] left-0 bottom-0 overflow-hidden flex flex-col items-center justify-center text-center transition-[height] duration-500 group-hover:h-full">
+                <h5 className="text-[25px] font-[600] mb-[15px] lg:text-[20px]">
                 C++ Mini projects
                 </h5>
-                <p className="text-[1rem] leading-[1.8]">
+                <p className="text-[1rem] leading-[1.8] lg:text-[12px]">
                 In this project I have created two mini-project in C++ Hotel
                   management system and registration page
                 </p>

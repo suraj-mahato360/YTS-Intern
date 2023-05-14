@@ -34,7 +34,8 @@ const Weather = () => {
       onLoad={() => {
         getWeatherData(city);
       }}
-      className="background absolute pr-4 bottom-0 right-0 mb-4"
+      // className="background pr-4 fixed bottom-0 right-0 mb-4 flex"
+      className="background pr-4 fixed bottom-0 right-0 mb-4 flex"
     >
       <div className=" bg-gray-800 rounded-md p-4 w-[21rem] mt-5">
         <div id="card" className="weather flex">

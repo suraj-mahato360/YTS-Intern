@@ -3,7 +3,7 @@ import React from 'react'
 const Contact = () => {
   return (
     <div>
-        <section className="rowin h-[100vh] bg-slate-900 lg:h-full" id="contact">
+        <section className="rowin h-[100vh] bg-slate-900 lg:h-full flex items-center" id="contact">
         <div className="contact grid grid-cols-2 items-center gap-10 p-28 pt-40 mt-24 lg:grid-cols-1 lg:pt-8 lg:p-4">
             <div className="contact-text" >
                 <h2 className='text-[2.8rem] leading-[1]'>Contact <span className='text-blue-500'>Me! </span></h2>

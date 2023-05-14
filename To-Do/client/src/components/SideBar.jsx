@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import Weather from "./Weather";
 
 const SideBar = () => {
   const [open, setOpen] = useState(true);
 
   return (
-    <div>
+    <div className="flex">
       <div
-        className={`container group h-[100vh] border-r-4 border-purple-500 text-2xl bg-gray-950 fixed ${
-          open ? "w-72" : "w-0"
+        className={`container group h-full border-r-4 border-purple-500 text-2xl bg-gray-950 fixed pt-20 ${
+          open ? "w-64" : "w-0"
         }`}
       >
         <div className="logo text-3xl px-4 py-4">
           <i className={`ri-menu-fill`} onClick={() => setOpen(!open)}></i>
         </div>
         <div className="list">
-          <ul className={`${open ? "w-72" : "hidden"}`}>
+          <ul className={`${open ? "w-64" : "hidden"} text-center`}>
             <NavLink to={"/"} >
               <li className="side-list flex py-2 cursor-pointer hover:bg-purple-900">
                 <div className="logo px-4">

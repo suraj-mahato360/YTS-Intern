@@ -1,6 +1,6 @@
 import React from "react";
 import mainImg from "../assets/img/mainImg.png";
-import Resume from '../assets/Resume-3.pdf'
+import Resume from '../assets/Suraj Mahato-Resume.pdf';
 
 const main = () => {
   return (

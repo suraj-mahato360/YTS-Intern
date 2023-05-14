@@ -1,10 +1,10 @@
 import React from 'react'
-import AddTask from '../components/AddTask' 
+import ComingSoon from '../components/ComingSoon'
  
 const AllTask = () => {
   return (
     <div>
-      <AddTask/>
+      <ComingSoon/>
     </div>
   )
 }
