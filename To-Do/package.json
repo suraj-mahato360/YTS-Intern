@@ -1,5 +1,5 @@
 {
-  "name": "todo-app",
+  "name": "dodler",
   "version": "1.0.0",
   "description": "Todo app created with the MERN stack",
   "main": "server.js",

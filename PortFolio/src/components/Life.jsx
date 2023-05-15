@@ -1,5 +1,8 @@
 import React from "react";
 import ImageAlbum from "./ImageAlbum";
+import ImgSlider from "./ImgSlider";
+import ImgSlider2 from "./ImgSlider2";
+import ImgSlider3 from "./ImgSlider3";
 
 const Life = () => {
   return (
@@ -11,8 +14,8 @@ const Life = () => {
               <span className="text-blue-500 ">My </span> Life
             </h2>
           </div>
-          <ImageAlbum />
-          {/* <div className="image grid grid-cols-3 items-center justify-items-center gap-10 mt-28 lg:grid-cols-1 lg:mt-1 lg:p-2">
+          {/* <ImageAlbum /> */}
+          <div className="image grid grid-cols-3 items-center justify-items-center gap-10 mt-28 lg:grid-cols-1 lg:mt-1 lg:p-2">
             <div className="trekking bg-slate-900 mb-20 max-w-[600px] max-h-[450px] rounded-[8px] lg:max-w-[400px] lg:max-h-[200px]">
               <div className="title text-center text-3xl p-3">
                 <h2>Travel</h2>
@@ -32,7 +35,7 @@ const Life = () => {
               </div>
               <ImgSlider3 />
             </div>
-          </div> */}
+          </div>
         </div>
       </section>
     </div>

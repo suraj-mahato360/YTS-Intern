@@ -22,31 +22,6 @@ const Tasks = ({ todo }) => {
       </div>
       <div>{new Date(todo.createdAt).toLocaleString("en-US")}</div>
     </div>
-    // <div className="mt-4">
-    //   <li className=" border-t-4 border-purple-500 p-4 flex justify-between items-center">
-    //     <div>{new Date(task.createdAt).toLocaleString("en-US")}</div>
-    //     <div>
-    //       <input
-    //         type="checkbox"
-    //         className="mr-2 w-5 h-5"
-    //         checked={task.completed}
-    //         onChange={() => onComplete(task.id)}
-    //       />
-    //       <span className={`${task.completed ? "line-through" : ""} text-xl`}>
-    //         {task.text}
-    //       </span>
-    //     </div>
-    //     <div>
-    //       {/* {dueDate && <span className="text-gray-500 mr-2">Due {dueDate}</span>} */}
-    //       <button
-    //         className="py-1 px-2 bg-red-500 text-white font-bold rounded"
-    //         onClick={() => dispatch(deleteTodo(task._id))}
-    //       >
-    //         Delete
-    //       </button>
-    //     </div>
-    //   </li>
-    // </div>
   );
 };
 

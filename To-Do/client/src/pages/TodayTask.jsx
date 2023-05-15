@@ -56,19 +56,6 @@ const TodayTask = () => {
         )}
       </section>
     </>
-    // <div className="top-0 left-0">
-    //   <AddTask/>
-    //   <ul>
-    //   {todos.length > 0 ? (<>
-    //         {todos.map((todo) => (
-    //           <Tasks key={todo._id} todo={todo} onComplete={completeTask}/>
-    //         ))}
-    //         </>
-    //     ) : (
-    //       <h3>You have not set any todos</h3>
-    //     )}
-    //   </ul>
-    // </div>
   );
 };
 
