@@ -8,7 +8,7 @@ export default function UserDetails() {
   const [admin, setAdmin] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/userData", {
+    fetch("https://dashboard-buj6.onrender.com/userData", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -23,13 +23,13 @@ export default function UserDetails() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userData");
-        if (data.data.userType == "Admin") {
+        if (data.data.userType === "Admin") {
           setAdmin(true);
         }
 
         setUserData(data.data);
 
-        if (data.data == "token expired") {
+        if (data.data === "token expired") {
           alert("Token expired login again");
           window.localStorage.clear();
           window.location.href = "./sign-in";

@@ -23,7 +23,7 @@ export default function AdminHome({ userData }) {
 
   //fetching all user
   const getAllUser = () => {
-    fetch("http://localhost:5000/getAllUser", {
+    fetch("https://dashboard-buj6.onrender.com/getAllUser", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -37,7 +37,7 @@ export default function AdminHome({ userData }) {
   //deleting user
   const deleteUser = (id, name) => {
     if (window.confirm(`Are you sure you want to delete ${name}`)) {
-      fetch("http://localhost:5000/deleteUser", {
+      fetch("https://dashboard-buj6.onrender.com/deleteUser", {
         method: "POST",
         crossDomain: true,
         headers: {
@@ -59,7 +59,7 @@ export default function AdminHome({ userData }) {
   };
 
   function getPaginatedUsers(){
-    fetch(`http://localhost:5000/paginatedUsers?page=${currentPage.current}&limit=5`, {
+    fetch(`https://dashboard-buj6.onrender.com/paginatedUsers?page=${currentPage.current}&limit=5`, {
       method: "GET",
     })
       .then((res) => res.json())

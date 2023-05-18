@@ -1,6 +1,7 @@
 {
   "name": "react-login-signup-ui-template",
   "version": "0.1.0",
+  "proxy":"https://dashboard-buj6.onrender.com/",
   "private": true,
   "dependencies": {
     "@coreui/react-chartjs": "^2.1.2",
@@ -24,9 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [

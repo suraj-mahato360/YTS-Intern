@@ -16,3 +16,17 @@ link- [https://mathcalculatorforyou.netlify.app/](https://mathcalculatorforyou.n
 Tech-Stack: Vite, React.js, Tailwind CSS
 
 link- [https://mathcalculatorforyou.netlify.app/](https://mahato-suraj.netlify.app/)
+
+#Project 4: To-Do app
+Tech-Stack: Vite, React.js, Tailwind CSS, NodeJs, ExpressJs
+
+link- [https://mathcalculatorforyou.netlify.app/](https://dodler.netlify.app/)
+
+#Project 5: Image uploder to s3
+Tech-Stack: Vite, React.js, Tailwind CSS, NodeJs, ExpressJs, aws-sdk
+
+
+#Project 6: Role-based aut
+Tech-Stack: React.js, CSS, NodeJs, ExpressJs, JWT
+
+link- [https://mathcalculatorforyou.netlify.app/](https://clinquant-sprinkles-70512a.netlify.app/.netlify.app/)

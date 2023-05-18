@@ -15,7 +15,9 @@
         "uuid": "^9.0.0"
     },
     "scripts": {
-        "dev": "nodemon app.mjs"
+        "dev": "nodemon app.mjs",
+        "build": "npm i",
+        "start": "node app.mjs"
     },
     "keywords": [],
     "author": "",

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function SignUp() {
+const SignUp = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -8,14 +8,14 @@ export default function SignUp() {
   const [secretKey, setSecretKey] = useState("");
 
   const handleSubmit = (e) => {
-    if (userType == "Admin" && secretKey != "Shadow") {
+    if (userType === "Admin" && secretKey !== "Shadow") {
       e.preventDefault();
       alert("Invalid Admin");
     } else {
       e.preventDefault();
 
       console.log(username, email, password);
-      fetch("http://localhost:5000/register", {
+      fetch("https://dashboard-buj6.onrender.com/register", {
         method: "POST",
         crossDomain: true,
         headers: {
@@ -33,7 +33,10 @@ export default function SignUp() {
         .then((res) => res.json())
         .then((data) => {
           console.log(data, "userRegister");
-          if (data.status == "ok") {
+          if (data.status === "ok") {
+            window.localStorage.setItem("token", data.data);
+            window.localStorage.setItem("loggedIn", true);
+            window.location.href = "/";
             alert("Registration Successful");
           } else {
             alert("Something went wrong");
@@ -49,10 +52,11 @@ export default function SignUp() {
           <h3>Sign Up</h3>
           <div className="signup-title">
             <input
-            className="right-btn"
+              className="right-btn"
               type="button"
               name="UserType"
               value="User"
+              active
               onClick={(e) => setUserType(e.target.value)}
             />
             <input
@@ -62,7 +66,7 @@ export default function SignUp() {
               onClick={(e) => setUserType(e.target.value)}
             />
           </div>
-          {userType == "Admin" ? (
+          {userType === "Admin" ? (
             <div className="mb-3">
               <label>Secret Key</label>
               <input
@@ -116,4 +120,6 @@ export default function SignUp() {
       </div>
     </div>
   );
-}
+};
+
+export default SignUp;

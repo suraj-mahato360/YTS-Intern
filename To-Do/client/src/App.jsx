@@ -4,6 +4,7 @@ import "./index.css";
 import "remixicon/fonts/remixicon.css";
 import SideBar from "./components/SideBar";
 import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from "./components/Navbar";
 import TodayTask from "./pages/TodayTask";
 import Important from "./pages/Important";

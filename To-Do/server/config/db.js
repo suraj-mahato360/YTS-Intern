@@ -1,5 +1,4 @@
 const { default: mongoose } = require("mongoose");
-const monogoose = require("mongoose");
 
 const connectDB = async () => {
   try {

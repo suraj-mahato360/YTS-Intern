@@ -28,12 +28,12 @@ const TodayTask = () => {
     };
   }, [user, navigate, isError, message, dispatch]);
 
-  const completeTask = (id) => {
-    const updatedTasks = todos.map((todo) =>
-      todo.id === id ? { ...todo, completed: !todo.completed } : todo
-    );
-    setText(updatedTasks);
-  };
+  // const completeTask = (id) => {
+  //   const updatedTasks = todos.map((todo) =>
+  //     todo.id === id ? { ...todo, completed: !todo.completed } : todo
+  //   );
+  //   setText(updatedTasks);
+  // };
 
   return (
     <>
